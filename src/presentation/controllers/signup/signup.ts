@@ -25,11 +25,8 @@ export class SigUpController implements Controller {
         return badRequest(error)
       }
 
-      const { name, password, passwordConfirmation, email } = httpRequest.body
+      const { name, password, email } = httpRequest.body
 
-      if (password !== passwordConfirmation) {
-        return badRequest(new InvalidParamError('passwordConfirmation'))
-      }
       const isValid = this.emailValidator.isValid(email)
       if (!isValid) {
         return badRequest(new InvalidParamError('email'))
