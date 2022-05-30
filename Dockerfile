@@ -1,10 +1,10 @@
-FROM node:16
+FROM node:14
 
 WORKDIR /usr/src/clean-node-api
 
 COPY ./package.json .
 
-RUN npm install --only=prod
+RUN npm install --production
 
 COPY ./dist ./dist
 
