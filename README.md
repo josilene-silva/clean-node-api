@@ -126,7 +126,7 @@ $ npm start
 2. [x] Retorna erro **400** se name, email, password ou passwordConfirmation não forem fornecidos pelo usuário
 3. [x] Retorna erro **400** se password e passwordConfirmation não forem iguais
 4. [x] Retorna erro **400** se o campo email for um e-mail inválido
-5. Retorna erro 403 se o email fornecido já estiver em uso
+5. [x] Retorna erro 403 se o email fornecido já estiver em uso
 6. [x] Retorna erro **500** se der erro ao tentar gerar uma senha criptografada
 7. [x] Retorna erro **500** se der erro ao tentar criar a conta do usuário
 8. [x] Retorna erro **500** se der erro ao tentar gerar o token de acesso
