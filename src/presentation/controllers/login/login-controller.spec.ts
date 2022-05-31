@@ -61,7 +61,7 @@ describe('Login Controller', () => {
     expect(httpResponse).toEqual(unauthorized())
   })
 
-  test('Should call Authenticator with correct values', async () => {
+  test('Should call Authentication with correct values', async () => {
     const { sut, authenticationStub } = makeSut()
 
     const authSpy = jest.spyOn(authenticationStub, 'auth')
