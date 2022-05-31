@@ -1,5 +1,5 @@
 export * from '../../../domain/models/account'
-export * from '../../../domain/usecases/authentication'
+export * from '../../../domain/usecases/surceases'
 export * from '../../protocols/criptography/hasher'
 export * from '../../protocols/criptography/hash-comparer'
 export * from '../../protocols/criptography/encrypter'
