@@ -38,10 +38,13 @@ O objetivo do curso é mostrar como criar uma API com uma arquitetura bem defini
 - [Design Patterns](#design-patterns)
 - [Metodologias e Design](#metodologias-e-designs)
 - [Funcionaliadades](#funcionalidades)
-  - [Cadastro](#cadastro)
+  - [Cadastro](#1cadastro)
     - [Casos de sucesso](#casos-de-sucesso)
     - [Exceções](#exceções)
     - [Arquitetura](#arquitetura)
+  - [Login](#2login)
+    - [Casos de sucesso](#casos-de-sucesso)
+    - [Exceções](#exceções)
 
 ## Requisitos
 
@@ -72,15 +75,21 @@ $ npm start
 - Liskov Substitution Principle (LSP)
 - Interface Segregation Principle (ISP)
 - Dependency Inversion Principle (DIP)
+- Separation of Concerns (SOC)
 - Don't Repeat Yourself (DRY)
+- You Aren't Gonna Need It (YAGNI)
+- Keep It Simple, Silly (KISS)
+- Composition Over Inheritance
 - Small Commits
 
 ## Design Patterns
 
 * Factory
 * Adapter
+* Composite
 * Decorator
 * Dependency Injection
+* Composition Root
 
 
 ## Metodologias e Designs
@@ -90,6 +99,8 @@ $ npm start
 * DDD
 * Conventional Commits
 * GitFlow
+* Modular Design
+* Dependency Diagrams
 * Use Cases
 
 ## Funcionalidades
@@ -121,3 +132,24 @@ $ npm start
 <div align='center'>
 <img src='./public/img/signup-architecture.png' />
 </div>
+
+### **2.Login**
+
+### *Casos de sucesso*
+
+1. [x] Recebe uma requisição do tipo **POST** na rota **/api/login**
+2. [x] Valida dados obrigatórios **email** e **password**
+3. [x] Valida que o campo **email** é um e-mail válido
+4. [x] **Busca** o usuário com o email e senha fornecidos
+5. [x] Gera um **token** de acesso a partir do ID do usuário
+6. [x] **Atualiza** os dados do usuário com o token de acesso gerado
+7. [x] Retorna **200** com o token de acesso e o nome do usuário
+
+### *Exceções*
+
+1. [x] Retorna erro **404** se a API não existir
+2. [x] Retorna erro **400** se name, email, password ou passwordConfirmation não forem fornecidos pelo usuário
+3. [x] Retorna erro **400** se password e passwordConfirmation não forem iguais
+4. [x] Retorna erro **400** se o campo email for um e-mail inválido
+5. [x] Retorna erro **500** se der erro ao tentar gerar uma senha criptografada
+6. [x] Retorna erro **500** se der erro ao tentar criar a conta do usuário
